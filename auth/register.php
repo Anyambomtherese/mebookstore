@@ -4,7 +4,7 @@
 
 
     if(isset($_POST['submit'])) {
-        if(empty($_POST['username']) OR empty($_POST['email']) OR empty($_POST['passworde'])) {
+        if(empty($_POST['username']) OR empty($_POST['email']) OR empty($_POST['password'])) {
              echo "<script>alert('one or more inputs are empty');</script>";
         
     } else {
@@ -13,23 +13,23 @@
         $email = $_POST ['email'];
         $password= $_POST ['password'];
 
-        $insert =$conn-prepare("INSERT INTO users(username, email, mypassword)
+        $insert =$conn->prepare("INSERT INTO users(username, email, mypassword)
         VALUES(:username, :email, :mypassword)");
+        
         $insert->execute([
-            
             ':username'   => $username,
             ':email'      => $email,
             ':mypassword' => password_hash($password, PASSWORD_DEFAULT ),
         ]);
 
         header("location: login.php");
+        }
     }
-
-
+    
 ?>
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form class="form-control mt-5" method= "POST", action="register.php">
+                <form class="form-control mt-5" method= "POST" action="register.php">
                     <h4 class="text-center mt-3"> Register </h4>
                     <div class="">
                         <label for="" class="col-sm-2 col-form-label">Username</label>
