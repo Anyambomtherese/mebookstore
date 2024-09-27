@@ -4,10 +4,8 @@
 
 
     if(isset($_POST['submit'])) {
-        if(empty($_POST['username']) OR empty($_POST['email']) OR empty($_POST['passworde'])){
-
-            echo "<script>alert('one or more inputs are empty');</script>";
-        }
+        if(empty($_POST['username']) OR empty($_POST['email']) OR empty($_POST['passworde'])) {
+             echo "<script>alert('one or more inputs are empty');</script>";
         
     } else {
         
@@ -15,7 +13,7 @@
         $email = $_POST ['email'];
         $password= $_POST ['password'];
 
-        $insert =$coon-prepare("INSERT INTO users(username, email, mypassword)
+        $insert =$conn-prepare("INSERT INTO users(username, email, mypassword)
         VALUES(:username, :email, :mypassword)");
         $insert->execute([
             
