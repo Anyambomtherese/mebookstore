@@ -2,8 +2,23 @@
 <?php require "../config/config.php"; ?>
 
 <?php
-$_SESSION['user_id'] = 1;
+    
+    $_SESSION['user_id'] = 1;
 
+    if(isset($_POST['submit'])) {
+        
+        $user_id = $_POST['pro_id'];
+        $pro_name = $_POST['pro_name'];
+        $pro_image = $_POST['pro_image'];
+        $pro_price = $_POST['pro_price'];
+        $pro_amount = $_POST['pro_amount'];
+        $pro_file = $_POST['pro_file'];
+        $user_id = $_POST['user_id'];
+      
+        $insert=$conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, 
+        pro_price, pro_amount, pro_file, user_id) VALUE(pro_id, : pro_name,:")
+       
+    }
 
     if(isset($_GET['id'])) {
 
@@ -79,8 +94,8 @@ $_SESSION['user_id'] = 1;
   <script>
     $(document).ready(function(){
        
-        $(document).on("submit", function(e)) {
-            alert('clicked');
-    }
+        $(document).on("submit", function(e)  {
+           $formdata = $("#form-data").serialise()+'&submit=submit';
+            })
     });
   </script>
