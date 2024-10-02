@@ -59,8 +59,7 @@
                             <input type="password" name="password" class="form-control" id="inputPassword">
                         </div>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary mt-4 mb-4" name="submit" type="submit">Login</button>
-
+                  <button class="w-100 btn btn-lg btn-primary mt-4 mb-4" name="submit" type="submit">Login</button>
                 </form>
              </div>
          </div>

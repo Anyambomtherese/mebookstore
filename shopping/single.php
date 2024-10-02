@@ -2,6 +2,8 @@
 <?php require "../config/config.php"; ?>
 
 <?php
+$_SESSION['user_id'] = 1;
+
 
     if(isset($_GET['id'])) {
 
@@ -41,7 +43,7 @@
                                 </div>
                                 <p class="about"><?php echo $product->description; ?></p>
                          <form method ="post" id="form-data">
-                                     <div class="">
+                            <div class="">
                             <input type="text"  name="pro_id" value="<?php echo $product->id; ?>"  class="form-control">
                             </div>
                             <div class="">
@@ -59,7 +61,7 @@
                                 <div class="">
                                 <input type="text"  name="pro_file" value="<?php echo $product->file; ?>"  class="form-control">
                             </div>
-                                <input type="text"  name="user_id" value="<?php echo $_SESSION['user_id']; ?>"  class="form-control">
+                                <input type="text"  name="user_id" value="<?php echo $_SESSION['user_id']; ?>"  class="form-control"> 
                             </div>
                             <div class="cart mt-4 align-items-center">
                                 <button name ="submit" type = "submit"class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart </button> </div>
