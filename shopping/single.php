@@ -16,8 +16,21 @@
         $user_id = $_POST['user_id'];
       
         $insert=$conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, 
-        pro_price, pro_amount, pro_file, user_id) VALUE(pro_id, : pro_name,:")
-       
+        pro_price, pro_amount, pro_file, user_id) VALUES(:pro_id, :pro_name, :pro_image,
+         :pro_price, : pro_amount, :pro_file, :user_id)")
+
+        $insert->execute([
+                
+            ':pro_id, 
+            ':pro_name' 
+            :pro_image,
+            :pro_price, 
+            :pro_amount, 
+            :pro_file, 
+            :user_id'
+
+        ])
+
     }
 
     if(isset($_GET['id'])) {
