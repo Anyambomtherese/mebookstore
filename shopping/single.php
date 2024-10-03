@@ -109,7 +109,6 @@
        
         $(document).on("submit", function(e)  {
 
-           e. preventDefault();
            var formdata = $("#form-data").serialise()+'&submit=submit';
 
            $.ajax({
